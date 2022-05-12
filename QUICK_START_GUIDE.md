@@ -76,6 +76,10 @@ export CUDA_HOME=/usr/local/cuda-11.1
 ## OTE CLI commands
 
 ### ote find - search for model templates
+   Set up your folder with ```$TASK_ALGO_DIR```
+   ```
+   TASK_ALGO_DIR=./external/mmdetection/
+   ```
    Have a look at model templates available for this virtual environment:
    ```
    ote find --root $TASK_ALGO_DIR
