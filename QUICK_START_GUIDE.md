@@ -10,7 +10,7 @@
 ```
 ls -la /usr/local | grep cuda
 ```
-2. Install the CUDA 11.1 if it is needed. Follow the instructions (here)[https://developer.nvidia.com/cuda-11.1.0-download-archive?target_os=Linux]
+2. Install the CUDA 11.1 if it is needed. Follow the instructions [here](https://developer.nvidia.com/cuda-11.1.0-download-archive?target_os=Linux)
 3. Verify the CUDA installation again:
 ```
 ls -la /usr/local | grep cuda
