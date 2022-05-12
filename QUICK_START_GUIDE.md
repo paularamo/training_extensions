@@ -26,9 +26,14 @@
 
    Sample output:
    ```
-   external/mmdetection/init_venv.sh
-   external/mmsegmentation/init_venv.sh
-   external/deep-object-reid/init_venv.sh
+    external/mmsegmentation/submodule/init_venv.sh
+    external/mmsegmentation/init_venv.sh
+    external/mmdetection/submodule/init_venv.sh
+    external/mmdetection/init_venv.sh
+    external/deep-object-reid/submodule/init_venv.sh
+    external/deep-object-reid/init_venv.sh
+    external/anomaly/init_venv.sh
+
    ```
    Each line in the output gives an `init_venv.sh` script that creates a virtual environment
    for the corresponding task type.
