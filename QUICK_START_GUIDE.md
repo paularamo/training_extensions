@@ -72,6 +72,16 @@ export CUDA_HOME=/usr/local/cuda-11.1
 6. As soon as `ote_cli` is installed in the virtual environment, you can use
    `ote` command line interface described below to run
    train/eval/export/other action for templates related to the chosen task type.
+   
+## OTE SDK in action
+### OTE Jupyter Nootebooks
+One can use Jupyter notebooks or OTE CLI tools to start working with models:
+```
+pip3 install notebook; cd ote_cli/notebooks/; jupyter notebook
+```
+
+---
+\* Other names and brands may be claimed as the property of others.
 
 ## OTE CLI commands
 
@@ -371,11 +381,4 @@ export CUDA_HOME=/usr/local/cuda-11.1
                            Location where openvino.zip will be stored.
    ```
 
-## OTE Jupyter Nootebooks
-One can use Jupyter notebooks or OTE CLI tools to start working with models:
-```
-pip3 install notebook; cd ote_cli/notebooks/; jupyter notebook
-```
 
----
-\* Other names and brands may be claimed as the property of others.
