@@ -5,6 +5,21 @@
 * Python 3.8+
 * [CUDA Toolkit 11.1](https://developer.nvidia.com/cuda-11.1.1-download-archive) - for training on GPU
 
+## CUDA installation
+1. Verify the CUDA installation is 11.1:
+```
+ls -la /usr/local | grep cuda
+```
+2. Install the CUDA 11.1 if it is needed. Follow the instructions (here)[https://developer.nvidia.com/cuda-11.1.0-download-archive?target_os=Linux]
+3. Verify the CUDA installation again:
+```
+ls -la /usr/local | grep cuda
+```
+4. Select the CUDA version you will need for OTE:
+```
+export CUDA_HOME=/usr/local/cuda-11.1
+```
+
 ## Setup OpenVINO™ Training Extensions
 
 1. Clone repository in the working directory by running the following:
@@ -38,29 +53,21 @@
    Each line in the output gives an `init_venv.sh` script that creates a virtual environment
    for the corresponding task type.
 
-4. Let's choose a task type.
+4. Let's choose a task type and create virtual environment 
    Let it be `external/mmdetection` for Object Detection task.
-   ```bash
-   TASK_ALGO_DIR=./external/mmdetection/
    ```
-   Note that we will not use the variable `TASK_ALGO_DIR` inside our scripts, we set it just to
-   simplify this guide.
-
-5. Let's create, activate virtual environment for the chosen task, and install `ote_cli`.
+   ./external/mmdetection/init_venv.sh
+   ```
+   
+5. Activate the environment for the chosen task, and install `ote_cli`.
    Note that the virtual environment folder may be created in any place in your system,
    but we will create it in the folder `./cur_task_venv` for convenience.
-   ```bash
-   bash $TASK_ALGO_DIR/init_venv.sh ./cur_task_venv python3.8
-   source ./cur_task_venv/bin/activate
-   pip3 install -e ote_cli/ -c $TASK_ALGO_DIR/constraints.txt
    ```
-   Note that `python3.8` is pointed as the second parameter of the script
-   `init_venv.sh` -- it is the version of python that should be used. You can
+   source ./external/mmdetection/venv/bin/activate
+   pip3 install -e ote_cli/
+   ```
+   Remember that you should have `python3.8`. You can
    use any `python3.8+` version here if it is installed on your system.
-
-   Also note that during installation of `ote_cli` the constraint file
-   from the chosen task folder is used to avoid breaking constraints
-   for the OTE task.
 
 6. As soon as `ote_cli` is installed in the virtual environment, you can use
    `ote` command line interface described below to run
