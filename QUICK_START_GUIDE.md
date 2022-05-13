@@ -19,6 +19,12 @@ ls -la /usr/local | grep cuda
 ```
 export CUDA_HOME=/usr/local/cuda-11.1
 ```
+# Quick Start Guide
+
+## Prerequisites
+* Ubuntu 18.04 / 20.04
+* Python 3.8+
+* [CUDA Toolkit 11.1](https://developer.nvidia.com/cuda-11.1.1-download-archive) - for training on GPU
 
 ## Setup OpenVINO™ Training Extensions
 
@@ -48,48 +54,41 @@ export CUDA_HOME=/usr/local/cuda-11.1
     external/deep-object-reid/submodule/init_venv.sh
     external/deep-object-reid/init_venv.sh
     external/anomaly/init_venv.sh
-
    ```
    Each line in the output gives an `init_venv.sh` script that creates a virtual environment
    for the corresponding task type.
 
-4. Let's choose a task type and create virtual environment 
+4. Let's choose a task type.
    Let it be `external/mmdetection` for Object Detection task.
+   ```bash
+   TASK_ALGO_DIR=./external/mmdetection/
    ```
-   ./external/mmdetection/init_venv.sh
-   ```
-   
-5. Activate the environment for the chosen task, and install `ote_cli`.
+   Note that we will not use the variable `TASK_ALGO_DIR` inside our scripts, we set it just to
+   simplify this guide.
+
+5. Let's create, activate virtual environment for the chosen task, and install `ote_cli`.
    Note that the virtual environment folder may be created in any place in your system,
    but we will create it in the folder `./cur_task_venv` for convenience.
+   ```bash
+   bash $TASK_ALGO_DIR/init_venv.sh ./cur_task_venv python3.8
+   source ./cur_task_venv/bin/activate
+   pip3 install -e ote_cli/ -c $TASK_ALGO_DIR/constraints.txt
    ```
-   source ./external/mmdetection/venv/bin/activate
-   pip3 install -e ote_cli/
-   ```
-   Remember that you should have `python3.8`. You can
+   Note that `python3.8` is pointed as the second parameter of the script
+   `init_venv.sh` -- it is the version of python that should be used. You can
    use any `python3.8+` version here if it is installed on your system.
+
+   Also note that during installation of `ote_cli` the constraint file
+   from the chosen task folder is used to avoid breaking constraints
+   for the OTE task.
 
 6. As soon as `ote_cli` is installed in the virtual environment, you can use
    `ote` command line interface described below to run
    train/eval/export/other action for templates related to the chosen task type.
-   
-## OTE SDK in action
-### OTE Jupyter Nootebooks
-One can use Jupyter notebooks or OTE CLI tools to start working with models:
-```
-pip3 install notebook; cd ote_cli/notebooks/; jupyter notebook
-```
-
----
-\* Other names and brands may be claimed as the property of others.
 
 ## OTE CLI commands
 
 ### ote find - search for model templates
-   Set up your folder with ```$TASK_ALGO_DIR```
-   ```
-   TASK_ALGO_DIR=./external/mmdetection/
-   ```
    Have a look at model templates available for this virtual environment:
    ```
    ote find --root $TASK_ALGO_DIR
@@ -381,4 +380,9 @@ pip3 install notebook; cd ote_cli/notebooks/; jupyter notebook
                            Location where openvino.zip will be stored.
    ```
 
+## OTE Jupyter Nootebooks
+One can use Jupyter notebooks or OTE CLI tools to start working with models:
+```
+pip3 install notebook; cd ote_cli/notebooks/; jupyter notebook
+```
 
