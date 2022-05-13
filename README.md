@@ -9,6 +9,19 @@ Deep Learning models and convert them using the [OpenVINO™
 toolkit](https://software.intel.com/en-us/openvino-toolkit) for optimized
 inference.
 
+## Detailed Workflow
+![](training_extensions_framework.png)
+
+1. To start working with OTE, prepare and annotate your dataset. For example, on CVAT.
+
+2. OTE train the model, using training interface, and evaluate the model quality on your dataset, using evaluation and inference interfaces.
+
+Note: prepare a separate dataset or split the dataset you have for more accurate quality evaluation.
+
+3. Having successful evaluation results received, you have an opportunity to deploy your model or continue optimizing it, using NNCF and POT. For more information about these frameworks, go to [Optimization Guide](https://docs.openvino.ai/nightly/openvino_docs_model_optimization_guide.html).
+
+If the results are unsatisfactory, add datasets and perform the same steps, starting with dataset annotation.
+
 ## Prerequisites
 * Ubuntu 18.04 / 20.04
 * Python 3.8+
