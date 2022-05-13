@@ -19,12 +19,6 @@ ls -la /usr/local | grep cuda
 ```
 export CUDA_HOME=/usr/local/cuda-11.1
 ```
-# Quick Start Guide
-
-## Prerequisites
-* Ubuntu 18.04 / 20.04
-* Python 3.8+
-* [CUDA Toolkit 11.1](https://developer.nvidia.com/cuda-11.1.1-download-archive) - for training on GPU
 
 ## Setup OpenVINO™ Training Extensions
 
