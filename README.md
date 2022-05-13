@@ -43,9 +43,6 @@ and release your contribution under these terms.
 ## Tutorials
 [Object Detection](https://github.com/openvinotoolkit/training_extensions/blob/master/ote_cli/notebooks/train.ipynb)
 
-## Misc
-
-Models that were previously developed can be found on the [misc](https://github.com/openvinotoolkit/training_extensions/tree/misc) branch.
 
 ## Contributing
 
