@@ -56,5 +56,7 @@ and release your contribution under these terms.
 
 Currently, training, exporting, evaluation scripts for TensorFlow\*-based models and the most of PyTorch\*-based models from the [misc](#misc) branch are exploratory and are not validated.
 
+This is still in development and you may run into some issues
+
 ---
 \* Other names and brands may be claimed as the property of others.
