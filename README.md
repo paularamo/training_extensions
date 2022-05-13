@@ -40,13 +40,22 @@ Deep Learning Deployment Toolkit is licensed under [Apache License Version 2.0](
 By contributing to the project, you agree to the license and copyright terms therein
 and release your contribution under these terms.
 
+To learn more about OTE CLI commands go to [GitHub](https://github.com/openvinotoolkit/training_extensions/blob/master/QUICK_START_GUIDE.md).
+
+## Tutorials
+[Object Detection](https://github.com/openvinotoolkit/training_extensions/blob/master/ote_cli/notebooks/train.ipynb)
+
 ## Misc
 
 Models that were previously developed can be found on the [misc](https://github.com/openvinotoolkit/training_extensions/tree/misc) branch.
 
 ## Contributing
 
-Please read the [Contributing guide](CONTRIBUTING.md) before starting work on a pull request.
+If you want to contribute, refer to [Contributing guide](https://github.com/openvinotoolkit/training_extensions/blob/master/CONTRIBUTING.md) before starting work on a pull request.
+
+Deep Learning Deployment Toolkit is licensed under [Apache License Version 2.0](https://github.com/openvinotoolkit/training_extensions/blob/master/LICENSE).
+By contributing to the project, you agree to the license and copyright terms therein
+and release your contribution under these terms.
 
 ## Known limitations
 
